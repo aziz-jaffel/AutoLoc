@@ -6,7 +6,6 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Getter
@@ -25,11 +24,4 @@ public class Contrat {
     LocalDate dateSignature;
     BigDecimal montantTotal;
     boolean valide;
-
-    @OneToOne
-    Reservation reservation;
-
-    @OneToMany(mappedBy = "contrat")
-    @ToString.Exclude
-    List<Paiement> paiements;
 }

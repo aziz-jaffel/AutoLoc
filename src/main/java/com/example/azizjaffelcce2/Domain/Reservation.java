@@ -25,14 +25,4 @@ public class Reservation {
 
     @Enumerated(EnumType.STRING)
     StatutReservation statut;
-
-    @ManyToOne
-    Client client;
-
-    @ManyToOne
-    Vehicule vehicule;
-
-    @OneToOne(mappedBy = "reservation")
-    @ToString.Exclude
-    Contrat contrat;
 }

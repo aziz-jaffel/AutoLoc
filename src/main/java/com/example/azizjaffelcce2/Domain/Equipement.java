@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
@@ -21,8 +19,4 @@ public class Equipement {
     long idEquipement;
 
     String libelle;
-
-    @ManyToMany(mappedBy = "equipements")
-    @ToString.Exclude
-    List<Vehicule> vehicules;
 }

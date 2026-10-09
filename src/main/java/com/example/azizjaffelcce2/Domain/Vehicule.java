@@ -5,11 +5,10 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -32,16 +31,4 @@ public class Vehicule {
 
     @Enumerated(EnumType.STRING)
     StatutVehicule statut;
-
-    @ManyToOne
-    Agence agence;
-    @OneToMany(mappedBy = "vehicule")
-    @ToString.Exclude
-    List<Maintenance> maintenances;
-    @ManyToMany
-    @ToString.Exclude
-    List<Equipement> equipements;
-    @OneToMany(mappedBy = "vehicule")
-    @ToString.Exclude
-    List<Reservation> reservations;
 }
